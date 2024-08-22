@@ -1,11 +1,14 @@
+/* eslint-disable react/prop-types */
 
-export default function SearchBar() {
+export default function SearchBar(props) {
+  const { filterText, inStockOnly } = props;
+
   return (
     <form>
-        <input type="text" placeholder="Search..." />
+        <input type="text" value={filterText} placeholder="Search..." />
         <br />
         <label>
-            <input type="checkbox" />
+            <input type="checkbox" checked={inStockOnly} />
             {" "}
             Only show products in stock
         </label>
